@@ -45,7 +45,7 @@ class HeroProvider with ChangeNotifier {
     loadingDetails = true;
     notifyListeners();
     try {
-      final all = await repository.getHeroes(page: 1); // busca primeira página
+      final all = await repository.getHeroes(page: 1); 
       HeroEntity? hero;
       try {
         hero = all.firstWhere((h) => h.id == id);
