@@ -22,6 +22,7 @@ class _HeroDetailsPageState extends State<HeroDetailsPage> {
     _loadHero();
   }
 
+  //Carrega os detalhes do herói
   Future<void> _loadHero() async {
     final provider = context.read<HeroProvider>();
     final hero = await provider.getHeroDetails(widget.heroId);

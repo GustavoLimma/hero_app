@@ -26,6 +26,7 @@ class _BattlePageState extends State<BattlePage> {
     _prepareBattle();
   }
 
+  //Pega os herois
   void _prepareBattle() {
     final myCards = context.read<CardsProvider>().myCards;
     if (myCards.isEmpty) {
@@ -47,6 +48,7 @@ class _BattlePageState extends State<BattlePage> {
     draws = 0;
   }
 
+  //Contadores
   void _registerResult(String result) {
     setState(() {
       switch (result) {
@@ -68,6 +70,7 @@ class _BattlePageState extends State<BattlePage> {
     }
   }
 
+  //Mostra o resultado
   void _showEndDialog() {
     String message;
     if (wins > losses) {
@@ -102,6 +105,7 @@ class _BattlePageState extends State<BattlePage> {
     );
   }
 
+  //Constroi a inferface
   @override
   Widget build(BuildContext context) {
     if (playerDeck.isEmpty) {
@@ -165,6 +169,7 @@ class _BattlePageState extends State<BattlePage> {
     );
   }
 
+  //Cria a carta do herói
   Widget _buildHeroCard(HeroEntity hero) {
     return Card(
       elevation: 4,

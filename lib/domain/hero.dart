@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'hero.freezed.dart';
 part 'hero.g.dart';
 
+//Modelo de domínio do herói, usada pra representar ele 
 @freezed
 class HeroEntity with _$HeroEntity {
   const factory HeroEntity({

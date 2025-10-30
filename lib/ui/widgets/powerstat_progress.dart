@@ -44,7 +44,7 @@ class PowerstatProgress extends StatelessWidget {
 
           const SizedBox(width: 8),
 
-          // Valor numérico (ex: 75)
+          // Valor numérico 
           SizedBox(
             width: 28,
             child: Text(
@@ -57,8 +57,7 @@ class PowerstatProgress extends StatelessWidget {
     );
   }
 
-  // 🔹 Opcional: muda a cor da barra conforme o valor
-  Color _getProgressColor(int value) {
+    Color _getProgressColor(int value) {
     if (value >= 80) return Colors.green;
     if (value >= 50) return Colors.orange;
     return Colors.red;

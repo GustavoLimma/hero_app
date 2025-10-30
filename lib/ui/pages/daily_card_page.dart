@@ -1,10 +1,8 @@
-// lib/screens/daily_card/daily_card_page.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:super_hero_app/ui/widgets/powerstat_progress.dart';
 import '../../core/di/cards_provider.dart';
-import '../../domain/hero.dart';
 
 class DailyCardPage extends StatefulWidget {
   static const routeName = '/daily_card';
@@ -23,27 +21,27 @@ class _DailyCardPageState extends State<DailyCardPage> {
     _ensureCard();
   }
 
+  //Carrega o card diario
   Future<void> _ensureCard() async {
     try {
       // Pega o provider
       final cards = context.read<CardsProvider>();
       
-      print('🔹 Chamando drawDailyCard...');
-      // Aqui você chama o método que busca o herói da API
+      print('Chamando drawDailyCard...');
+      //Chama o método que busca o herói da api no cardprovider
       await cards.drawDailyCard();
 
-      // Print para depuração
       if (cards.lastDailyHero != null) {
-        print('🟢 Card carregado: ${cards.lastDailyHero!.name}');
+        print('Card carregado: ${cards.lastDailyHero!.name}');
       } else {
-        print('⚠️ Nenhum herói retornado da API.');
+        print('Nenhum herói retornado da API.');
       }
 
       setState(() {
         _loading = false;
       });
     } catch (e, st) {
-      print('🔴 Erro ao buscar card: $e');
+      print('Erro ao buscar card: $e');
       print(st);
       setState(() {
         _loading = false;
@@ -51,6 +49,7 @@ class _DailyCardPageState extends State<DailyCardPage> {
     }
   }
 
+  //Obtem o estado atualizado
   @override
   Widget build(BuildContext context) {
     final cards = context.watch<CardsProvider>();
