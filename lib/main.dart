@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           },
         ),
         ChangeNotifierProvider<CardsProvider>(
-          // Corrigido: tipo explícito para repository
+          //tipo explícito para repository
           create: (ctx) => CardsProvider(repository: ctx.read<HeroRepository>()),
         ),
       ],

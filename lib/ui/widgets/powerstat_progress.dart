@@ -18,7 +18,6 @@ class PowerstatProgress extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         children: [
-          // Label (nome da característica)
           SizedBox(
             width: 80,
             child: Text(
